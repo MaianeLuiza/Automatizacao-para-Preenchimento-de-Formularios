@@ -25,11 +25,11 @@ time.sleep(3)
 
 table = pd.read_csv('products.csv')
 
-for line in table.index:
+for row in table.index:
     pyautogui.click(x=933, y=325)
     for column in table.columns:
-        if not pd.isna(table.loc[line, column]):
-            pyautogui.write(str(table.loc[line, column]))
+        if not pd.isna(table.loc[row, column]):
+            pyautogui.write(str(table.loc[row, column]))
         pyautogui.press('tab')
 
     pyautogui.press('enter')
